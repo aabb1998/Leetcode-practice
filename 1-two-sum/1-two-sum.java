@@ -1,23 +1,20 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         
-        Map<Integer,Integer> values = new HashMap<>();
-       
+        HashMap<Integer, Integer> mapList = new HashMap<>();
+        int[] results = new int[2];
+        
         for (int i = 0; i < nums.length; i++) {
-            
-            // 9 - 2 = 7
-            int difference = target - nums[i];
-            
-            if (values.containsKey(difference)) {
-                return new int[] {i, values.get(difference)};
+            if (!mapList.containsKey(target - nums[i])) {
+                mapList.put(nums[i], i);
+            } else {
+                return new int[] {mapList.get(target-nums[i]), i};
             }
-            
-            values.put(nums[i], i);
-            
         }
         
+        throw new IllegalArgumentException();
         
-        return null;
         
     }
 }
+
