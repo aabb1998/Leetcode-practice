@@ -13,7 +13,6 @@ class Solution {
             num /= 10;
         }
         
-        System.out.println(reversed);
         return reversed == x;
         
     }
