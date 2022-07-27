@@ -1,11 +1,11 @@
 class Solution {
     public boolean isPalindrome(int x) {
         
-        if (x < 0) return false;
+       if (x < 0) return false;
         
         int reversed = 0;
-        int num = x;
         int remainder = 0;
+        int num = x;
         
         while (num != 0) {
             remainder = num % 10;
@@ -17,4 +17,9 @@ class Solution {
         
     }
 }
+
+
+// 121
+// -121
+// 10
 
