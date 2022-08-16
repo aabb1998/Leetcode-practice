@@ -15,9 +15,10 @@
  */
 class Solution {
     public TreeNode invertTree(TreeNode root) {
+        //First check if root is null. Store a temp value and swap. Then recursively call for left and for right. Return root.
         
-        if (root == null) return null;
-       
+        if (root == null) return root;
+        
         TreeNode temp = root.left;
         root.left = root.right;
         root.right = temp;
@@ -27,9 +28,6 @@ class Solution {
         
         return root;
         
+        
     }
-    
-
-    
-    
 }
