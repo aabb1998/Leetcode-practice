@@ -24,27 +24,31 @@ class Solution {
         
         Queue<Node> queue = new LinkedList<>();
         
-        int depth = 0;
-        
         queue.offer(root);
         
+        int depth = 0;
+        
         while (!queue.isEmpty()) {
-            
             
             int size = queue.size();
             
             for (int i = 0; i < size; i++) {
                 Node node = queue.poll();
-
                 for (Node child : node.children) {
-                    queue.offer(child);
+                    queue.add(child);
                 }
             }
             
             depth++;
             
-        }
+        } 
         
         return depth;
+        
     }
-}
+} 
+
+
+
+
+
