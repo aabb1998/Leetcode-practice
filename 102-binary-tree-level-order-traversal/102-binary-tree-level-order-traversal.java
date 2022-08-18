@@ -20,18 +20,20 @@ class Solution {
         
         if (root == null) return levels;
         
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
         int level = 0;
-    
+        
+        Queue<TreeNode> queue = new LinkedList<>();
+        
+        queue.add(root);
         
         while (!queue.isEmpty()) {
             
             levels.add(new ArrayList<Integer>());
-
+            
             int levelLength = queue.size();
             
             for (int i = 0; i < levelLength; i++) {
+                
                 TreeNode node = queue.poll();
                 
                 levels.get(level).add(node.val);
@@ -40,14 +42,19 @@ class Solution {
                 if (node.right != null) queue.add(node.right);
                 
                 
+                
             }
             
             level++;
             
             
+            
+            
         }
-         
+        
         return levels;
+        
+        
         
     }
 }
